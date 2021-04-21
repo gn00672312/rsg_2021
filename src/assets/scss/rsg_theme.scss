@@ -1,0 +1,24 @@
+
+$default_font-size: 1.6rem !default;
+
+$color-black--70: rgb(76, 76, 76) !default;
+
+body {
+  //主要中文字體：思源黑體
+  // font-family: 'Noto Sans TC','Lato','STHeiti','PingFang','Microsoft JhengHei'
+  // ,'Apple LiGothic Medium','Verdana','Tahoma','Trebuchet MS','Helvetica Neue'
+  // ,Arial,sans-serif;
+
+  //主要中文字體：蘋方、微軟正黑體
+  font-family: 'PingFang','Microsoft JhengHei'
+  ,'Apple LiGothic Medium','Verdana','Tahoma','Trebuchet MS','Helvetica Neue'
+  ,Arial,sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-display: optional !important;
+
+  font-size: $default_font-size;
+  color: $color-black--70;
+  line-height: 1.5;
+}
