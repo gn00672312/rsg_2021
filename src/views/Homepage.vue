@@ -14,13 +14,24 @@
       <el-row style="position: relative;">
         <img class="banner-bg" src="@/assets/imgs/test-taipei.jpg"/>
         <div class="banner-content">
-          <div><font-awesome-icon :icon="['far', 'calendar-alt']"/> 11-13 Nov, 2021</div>
-          <img src="@/assets/imgs/RSG_logo_2021_Taipei.png"/>
+          <div>
+            <font-awesome-icon :icon="['far', 'calendar-alt']"/>
+            4-6 Nov, 2021
+          </div>
+          <img src="@/assets/imgs/RSG_logo_2021_Taipei.png" width="300px"/>
         </div>
       </el-row>
-      系統建置中...
+      <el-row>
+        <el-col :offset="3" :span="18">
+          <img id="logo-sai" src="@/assets/imgs/logo-sai.png"/>
+          <div>Founded in 2001, Scrum Alliance® is the largest, most established and influential professional member- ship and certification organization in the Agile community. Scrum Alliance is a nonprofit association that has certified more than 750,000 practitioners worldwide. Its vision is to help “Transform the World of Work” with a mission to guide and inspire individuals, leaders, and organizations with practices, princi- ples, and values that create workplaces that are joyful, prosperous, and sustainable. For more informa- tion, please visit scrumalliance.org.</div>
+          <div>Through Scrum Alliance, you have access to a world of learning and resources that will help you succeed with Scrum in the software development industry and beyond.</div>
+          <h3>Advance Yourself</h3>
+          <div>Scrum Alliance’s progressive certification course model allows you to choose an educational track that improves your core Scrum knowledge, builds skill sets, and provides the necessary tools to evolve as an Agile practitioner. Choose your path. Are you ready to move your career to its next sprint? Sign up for an offering from our alliance of profes- sionally-assessed and specialized trainers around the globe.</div>
+        </el-col>
+      </el-row>
       <el-row id="footer">
-        <el-col :span="8" :offset="8" style="text-align:center">
+        <el-col :offset="8" :span="8" style="text-align:center">
           <img id='footer-logo' src="@/assets/imgs/RSG_logo_2021_Taipei.png"/>
         </el-col>
       </el-row>
@@ -56,8 +67,10 @@ export default {
 .el-header, .el-main, .el-container {
   padding: 0 !important;
 }
+
 #main {
   height: 100%;
+  font-size: 14px;
 }
 
 .banner-bg {
@@ -80,6 +93,12 @@ export default {
     color: #fff;
     float: right;
   }
+}
+
+#logo-sai {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #footer {
