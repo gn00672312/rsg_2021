@@ -12,22 +12,31 @@
     </el-header>
     <el-main>
       <el-row style="position: relative;">
-        <img class="banner-bg" src="@/assets/imgs/test-taipei.jpg"/>
+        <img class="banner-bg" src="@/assets/imgs/banner.jpeg"/>
         <div class="banner-content">
-          <div>
-            <font-awesome-icon :icon="['far', 'calendar-alt']"/>
-            4-6 Nov, 2021
-          </div>
-          <img src="@/assets/imgs/RSG_logo_2021_Taipei.png" width="300px"/>
+          <font-awesome-icon :icon="['far', 'calendar-alt']"/>
+          4-6 November, 2021. Taipei, Taiwan
         </div>
       </el-row>
       <el-row>
         <el-col :offset="3" :span="18">
           <img id="logo-sai" src="@/assets/imgs/logo-sai.png"/>
-          <div>Founded in 2001, Scrum Alliance® is the largest, most established and influential professional member- ship and certification organization in the Agile community. Scrum Alliance is a nonprofit association that has certified more than 750,000 practitioners worldwide. Its vision is to help “Transform the World of Work” with a mission to guide and inspire individuals, leaders, and organizations with practices, princi- ples, and values that create workplaces that are joyful, prosperous, and sustainable. For more informa- tion, please visit scrumalliance.org.</div>
-          <div>Through Scrum Alliance, you have access to a world of learning and resources that will help you succeed with Scrum in the software development industry and beyond.</div>
+          <div>Founded in 2001, Scrum Alliance® is the largest, most established and influential professional member-
+            ship and certification organization in the Agile community. Scrum Alliance is a nonprofit association that
+            has certified more than 750,000 practitioners worldwide. Its vision is to help “Transform the World of Work”
+            with a mission to guide and inspire individuals, leaders, and organizations with practices, princi- ples,
+            and values that create workplaces that are joyful, prosperous, and sustainable. For more informa- tion,
+            please visit scrumalliance.org.
+          </div>
+          <div>Through Scrum Alliance, you have access to a world of learning and resources that will help you succeed
+            with Scrum in the software development industry and beyond.
+          </div>
           <h3>Advance Yourself</h3>
-          <div>Scrum Alliance’s progressive certification course model allows you to choose an educational track that improves your core Scrum knowledge, builds skill sets, and provides the necessary tools to evolve as an Agile practitioner. Choose your path. Are you ready to move your career to its next sprint? Sign up for an offering from our alliance of profes- sionally-assessed and specialized trainers around the globe.</div>
+          <div>Scrum Alliance’s progressive certification course model allows you to choose an educational track that
+            improves your core Scrum knowledge, builds skill sets, and provides the necessary tools to evolve as an
+            Agile practitioner. Choose your path. Are you ready to move your career to its next sprint? Sign up for an
+            offering from our alliance of profes- sionally-assessed and specialized trainers around the globe.
+          </div>
         </el-col>
       </el-row>
       <el-row id="footer">
@@ -74,16 +83,21 @@ export default {
 }
 
 .banner-bg {
-  opacity: 0.6;
   width: 100%;
   height: auto;
 }
 
 .banner-content {
+  border: 1px #29a3a7 solid;
   position: absolute;
-  top: 50%;
-  left: 25%;
+  top: 90%;
+  left: 60%;
   transform: translate(-50%, -50%);
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  background: #259cbd;
+  color: white;
 }
 
 .el-menu--horizontal {
