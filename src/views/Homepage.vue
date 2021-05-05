@@ -4,21 +4,65 @@
       <el-menu :default-active="activeIndex" class="el-menu rsg-theme" mode="horizontal">
         <el-menu-item class="dock-right" index="6">票務</el-menu-item>
         <el-menu-item class="dock-right" index="5">贊助夥伴</el-menu-item>
-        <el-menu-item class="dock-right" index="4">Scrum Alliance</el-menu-item>
+        <el-menu-item class="dock-right" index="4" @click="link_to_SAI">Scrum Alliance</el-menu-item>
         <el-menu-item class="dock-right" index="3">講者介紹</el-menu-item>
         <el-menu-item class="dock-right" index="2">時程表</el-menu-item>
         <el-menu-item class="dock-right" index="1">Scrum Gathering Taipei 2021</el-menu-item>
       </el-menu>
     </el-header>
-    <el-main>
+    <el-main class="container">
       <el-row style="position: relative;">
-        <img class="banner-bg" src="@/assets/imgs/banner.jpeg"/>
-        <div class="banner-content">
-          <font-awesome-icon :icon="['far', 'calendar-alt']"/>
-          4-6 November, 2021. Taipei, Taiwan
+        <div class="block">
+          <el-carousel
+            :height="carousel_height"
+            :interval="5000"
+            arrow="always"
+            trigger="click"
+          >
+            <el-carousel-item>
+              <div class="item">
+                <div class="item__content">
+                  <h3>2021年 台灣將迎來史上第一次 Regional Scrum Gathering TAIPEI 2021 </h3>
+                  <div>我們誠摯邀請您，和我們一同共襄盛舉。</div>
+                  <div>2021 年11月 我們台北見!</div>
+                  <div>（11/4-5 線上虛擬活動）</div>
+                  <div>（11/6 線下實體活動）</div>
+                </div>
+                <img class="item__image" src="@/assets/imgs/test-taipei.jpg"/>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="item">
+                <div class="item__content">
+                  <h3>Scrum—The Future of Work</h3>
+                  <div>Together, We Are Transforming the World of Work.</div>
+                  <br/>
+                  <div>回歸初心，改變工作的模式與方法</div>
+                  <div>（Back to the Original!）</div>
+                  <br/>
+                  <div>追本溯源，連結<b>Scrum Alliance</b>源頭</div>
+                  <div>（Connect to the Source!）</div>
+                  <br/>
+                  <div>實踐<b>Scrum!</b> 體現<b>Scrum!</b> 讓<b>Scrum</b> 成為<b>The Future of Work。</b></div>
+                  <div>（Practice and Live in Scrum!）</div>
+                </div>
+                <img class="item__image" src="@/assets/imgs/banner.jpeg"/>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="item">
+                <div class="item__content">
+                  <h3>2021，我們一起</h3>
+                  <h3>Be Agile! Run Scrum!</h3>
+                </div>
+                <img class="item__image" src="@/assets/imgs/banner.jpeg"/>
+              </div>
+            </el-carousel-item>
+          </el-carousel>
         </div>
       </el-row>
-      <el-row>
+
+      <el-row class="block-container">
         <el-col :offset="3" :span="18">
           <img id="logo-sai" src="@/assets/imgs/logo-sai.png"/>
           <div>Founded in 2001, Scrum Alliance® is the largest, most established and influential professional member-
@@ -45,7 +89,7 @@
         </el-col>
       </el-row>
     </el-main>
-    <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
+    <el-backtop target="#main .container"></el-backtop>
   </el-container>
 </template>
 
@@ -63,7 +107,20 @@ export default {
     }
   },
 
-  methods: {},
+  computed: {
+    carousel_height() {
+      let hh = window.innerHeight
+      let nav_height = 60
+      let buffer = 240
+      return (hh - nav_height - buffer) + 'px'
+    }
+  },
+
+  methods: {
+    link_to_SAI() {
+      window.location.href = "https://www.scrumalliance.org/"
+    }
+  },
 
   mounted() {
   },
@@ -72,6 +129,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/scss/var.scss";
+
+html, body {
+  height: 100%;
+}
 
 .el-header, .el-main, .el-container {
   padding: 0 !important;
@@ -82,9 +143,49 @@ export default {
   font-size: 14px;
 }
 
-.banner-bg {
+.block-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.item {
+  font-size: 18px;
+}
+
+.item__content {
+  text-align: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #409eff;
+  opacity: 0.9;
+  color: #fff;
+  padding: 3px;
+
+  background: linear-gradient(to right, #00B97E, #0094D5);
+
+  & > h3 {
+    font-size: 28px;
+  }
+}
+
+.item__image {
   width: 100%;
   height: auto;
+  object-fit: cover;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
 }
 
 .banner-content {
@@ -98,6 +199,11 @@ export default {
   font-size: 18px;
   background: #259cbd;
   color: white;
+
+  background: -webkit-linear-gradient(left, #42b560, #259cbd);
+  background: -o-linear-gradient(right, #42b560, #259cbd);
+  background: -moz-linear-gradient(right, #42b560, #259cbd);
+  background: linear-gradient(to right, #42b560, #259cbd);
 }
 
 .el-menu--horizontal {
@@ -124,6 +230,16 @@ export default {
 .rsg-theme {
 
 }
+
+.page-component__scroll {
+  height: 500px;
+}
+
+.el-scrollbar__wrap {
+  overflow: scroll;
+  height: 100%;
+}
+
 
 #footer-logo {
   height: 300px;
