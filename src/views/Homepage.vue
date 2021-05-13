@@ -8,7 +8,8 @@
         </el-menu-item>
         <el-menu-item class="dock-right" index="6">{{ $t('Tickets') }}</el-menu-item>
         <el-menu-item class="dock-right" index="5">{{ $t('Sponsors') }}</el-menu-item>
-        <el-menu-item class="dock-right" index="4" @click="redirect('https://www.scrumalliance.org/')">Scrum Alliance</el-menu-item>
+        <el-menu-item class="dock-right" index="4" @click="redirect('https://www.scrumalliance.org/')">Scrum Alliance
+        </el-menu-item>
         <el-menu-item class="dock-right" index="3">{{ $t('Speakers') }}</el-menu-item>
         <el-menu-item class="dock-right" index="2">{{ $t('Schedule') }}</el-menu-item>
         <el-menu-item class="dock-right" index="1">Scrum Gathering Taipei 2021</el-menu-item>
@@ -26,13 +27,23 @@
             <el-carousel-item>
               <div class="item">
                 <div class="item__content">
-                  <h3>2021年 台灣將迎來史上第一次 Regional Scrum Gathering TAIPEI 2021 </h3>
+                  <div id="logo">
+                    <img src="@/assets/imgs/RSG_logo_2021_Taipei.png"/>
+                  </div>
+                </div>
+                <img class="item__image" src="@/assets/imgs/banner_210510.jpg"/>
+              </div>
+            </el-carousel-item>
+            <el-carousel-item>
+              <div class="item">
+                <div class="item__content">
+                  <h3>2021年 台灣將迎來史上第一次 Regional Scrum Gathering℠ TAIPEI 2021 </h3>
                   <div>我們誠摯邀請您，和我們一同共襄盛舉。</div>
                   <div>2021 年11月 我們台北見!</div>
                   <div>（11/4-5 線上虛擬活動）</div>
                   <div>（11/6 線下實體活動）</div>
                 </div>
-                <img class="item__image" src="@/assets/imgs/test-taipei.jpg"/>
+                <img class="item__image" src="@/assets/imgs/banner_210510.jpg"/>
               </div>
             </el-carousel-item>
             <el-carousel-item>
@@ -59,11 +70,29 @@
                   <h3>2021，我們一起</h3>
                   <h3>Be Agile! Run Scrum!</h3>
                 </div>
-                <img class="item__image" height="100%" src="@/assets/imgs/banner.jpeg"/>
+                <img class="item__image" src="@/assets/imgs/banner_210510.jpg"/>
               </div>
             </el-carousel-item>
           </el-carousel>
         </div>
+      </el-row>
+      <el-row class="block-container">
+        <el-col id='about_the_event_block' :offset="2" :span="20">
+          <h2>開始與永續</h2>
+          20年前—2001年Scrum Alliance 成立，是為了推動敏捷運動。
+          <br/>
+          10年前—2011年Scrum 漸漸的被引進台灣，是為了改變工作方法。
+          <br/>
+          今年—2021年 Scrum Alliance 成立的20週年，台灣即將迎來史上第一次Regional Scrum Gathering℠ TAIPEI 2021，在台北舉行。
+          <br/><br/>
+          Regional Scrum Gathering℠ TAIPEI是由一群敏捷實踐者及受益者的志工們所共同推動，我們的起心動念很單純、也很純粹:
+          <br/>
+          <span style="font-style:oblique; font-weight: bold;">為的是，改變台灣長久以來僵化的工作思維、工作模式以及工作文化。</span>
+          <br/>
+          <span style="font-style:oblique;font-weight: bold;">為的是，提供所有敏捷實踐者及受益者有更多交流、吸取新知、自我的提升的機會。</span>
+          <br/>
+          <span style="font-style:oblique;font-weight: bold;">為的是，讓還沒加入敏捷的個人、企業及各個單位深入了解敏捷的好處，解決你我的困境、改變你我的工作模式。</span>
+        </el-col>
       </el-row>
       <el-row class="block-container">
         <el-col :offset="5" :span="18">
@@ -111,8 +140,9 @@
       </el-row>
       <el-row class="block-container">
         <el-col :offset="3" :span="18">
-          <h2 style="text-align: center; font-size: 36px;">冠名贊助</h2>
-          <img id="logo-sai" class='company-logo' src="@/assets/imgs/logo-sai.png" @click="redirect('https://www.scrumalliance.org/')"/>
+          <h2>{{ $t('Title Sponsor') }}</h2>
+          <img id="logo-sai" class='company-logo' src="@/assets/imgs/logo-sai.png"
+               @click="redirect('https://www.scrumalliance.org/')"/>
         </el-col>
       </el-row>
       <el-row class="block-container">
@@ -121,9 +151,12 @@
       </el-row>
       <el-row id="footer">
         <el-col :offset="1" :span="8">
-          Contact US: <font-awesome-icon :icon="['fas', 'envelope']" />   rsgtpe@outlook.com
+          Contact US:
+          <font-awesome-icon :icon="['fas', 'envelope']"/>
+          rsgtpe@outlook.com
           <div>
-          <font-awesome-icon :icon="['fab', 'facebook']" class="shortcut-btn" @click="redirect('https://www.facebook.com/rsgtaipei2021')"/>
+            <font-awesome-icon :icon="['fab', 'facebook']" class="shortcut-btn"
+                               @click="redirect('https://www.facebook.com/rsgtaipei2021')"/>
           </div>
         </el-col>
         <el-col :offset="1" :span="8" style="text-align:center">
@@ -200,6 +233,16 @@ html, body {
 .block-container {
   padding-top: 40px;
   padding-bottom: 40px;
+
+  & h2 {
+    text-align: center;
+    font-size: 36px;
+  }
+}
+
+#about_the_event_block {
+  text-align: center;
+  font-size: 18px;
 }
 
 .item {
@@ -245,6 +288,16 @@ html, body {
   height: auto;
   display: inline-block;
   vertical-align: middle;
+}
+
+#logo {
+  padding: 30px;
+  background: rgba(220, 220, 220, 0.7);
+
+  img {
+    width: 250px;
+    height: auto;
+  }
 }
 
 .el-carousel__item:nth-child(2n) {
@@ -340,7 +393,7 @@ html, body {
 }
 
 .rsg-theme {
-
+  background: rgba(64, 64, 64, 0.7);
 }
 
 .page-component__scroll {
