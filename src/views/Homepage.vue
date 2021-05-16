@@ -19,10 +19,10 @@
       <el-row style="position: relative;">
         <div class="block">
           <el-carousel
-            :height="carousel_height"
-            :interval="5000"
-            arrow="always"
-            trigger="click"
+              :height="carousel_height"
+              :interval="5000"
+              arrow="always"
+              trigger="click"
           >
             <el-carousel-item>
               <div class="item">
@@ -37,19 +37,36 @@
             <el-carousel-item>
               <div class="item">
                 <div class="item__content">
-                  <h3>2021年 台灣將迎來史上第一次 Regional Scrum Gathering℠ TAIPEI 2021 </h3>
-                  <div>我們誠摯邀請您，和我們一同共襄盛舉。</div>
-                  <div>2021 年11月 我們台北見!</div>
-                  <div>（11/4-5 線上虛擬活動）</div>
-                  <div>（11/6 線下實體活動）</div>
+                  <h3>
+                    {{
+                      $t('The first-ever Regional Scrum Gathering in Taiwan will be hosted by Agile Community Taiwan (ACT) and Taiwan Agile Tribe (TAT).')
+                    }}</h3>
+                  <div>{{ $t('We sincerely invite you to join this event.') }}</div>
+                  <div>{{ $t('See you in Taipei in November 2021.') }}</div>
+                  <div>（{{ $t('11/4-5 Virtual Events') }}）</div>
+                  <div>（{{ $t('11/6 Physical Event') }}）</div>
                 </div>
                 <img class="item__image" src="@/assets/imgs/banner_210510.jpg"/>
               </div>
             </el-carousel-item>
             <el-carousel-item>
               <div class="item">
-                <div class="item__content">
-                  <h3>Scrum—The Future of Work</h3>
+                <div v-if='lang=="en"' class="item__content">
+                  <h3>Scrum--The Future of Work</h3>
+                  <div>Together, We Are Transforming the World of Work.</div>
+                  <br/>
+                  <div>Back to Basics, Change the Mode and Method of Work</div>
+                  <div>（Back to the Original!）</div>
+                  <br/>
+                  <div>Connecting to the source of <b>Scrum Alliance</b></div>
+                  <div>（Connect to the Source!）</div>
+                  <br/>
+                  <div>Implementing <b>Scrum!</b> Embracing <b>Scrum</b>, and let <b>Scrum</b> be <b>the Future of
+                    Work。</b></div>
+                  <div>（Practice and Live in Scrum!）</div>
+                </div>
+                <div v-else class="item__content">
+                  <h3>Scrum--The Future of Work</h3>
                   <div>Together, We Are Transforming the World of Work.</div>
                   <br/>
                   <div>回歸初心，改變工作的模式與方法</div>
@@ -58,7 +75,7 @@
                   <div>追本溯源，連結<b>Scrum Alliance</b>源頭</div>
                   <div>（Connect to the Source!）</div>
                   <br/>
-                  <div>實踐<b>Scrum!</b> 體現<b>Scrum!</b> 讓<b>Scrum</b> 成為<b>The Future of Work。</b></div>
+                  <div>實踐<b>Scrum!</b> 體現<b>Scrum!</b> 讓<b>Scrum</b>成為<b>The Future of Work。</b></div>
                   <div>（Practice and Live in Scrum!）</div>
                 </div>
                 <img class="item__image" src="@/assets/imgs/banner_210510.jpg"/>
@@ -67,7 +84,7 @@
             <el-carousel-item>
               <div class="item">
                 <div class="item__content">
-                  <h3>2021，我們一起</h3>
+                  <h3>{{ $t('2021, Let’s') }}</h3>
                   <h3>Be Agile! Run Scrum!</h3>
                 </div>
                 <img class="item__image" src="@/assets/imgs/banner_210510.jpg"/>
@@ -77,14 +94,30 @@
         </div>
       </el-row>
       <el-row class="block-container">
-        <el-col id='about_the_event_block' :offset="2" :span="20">
+        <el-col v-if="lang=='en'" :offset="2" :span="20" class='about_the_event_block'>
+          <h2>The Beginning and Sustainability</h2>
+          20 years ago--2001 Scrum Alliance was founded to promote the Agile movement.
+          <br/>
+          10 years ago --- 2011 Scrum was gradually introduced to Taiwan to change the way we work.
+          <br/>
+          This year--2021, the 20th anniversary of Scrum Alliance, Taiwan is going to welcome the First-Ever Regional
+          Scrum Gathering℠ TAIPEI 2021 in Taipei.
+          <br/><br/>
+          Regional Scrum Gathering℠ TAIPEI is driven by a group of volunteers who are agile practitioners and
+          beneficiaries. Our intention is simple and pure to help <span style="font-style:oblique; font-weight: bold;">change the long-standing rigid thinking, working
+          pattern and work culture in Taiwan.</span>
+          <br/>
+          <span style="font-style:oblique;font-weight: bold;">This event will provide more opportunities to all agile partners for communicating, learning and improving.</span>
+          <br/>
+          <span style="font-style:oblique;font-weight: bold;">To provide individuals, companies and organizations that have not yet joined Agile with a deeper understanding of the benefits of Agile, to solve your dilemmas and change your work patterns.</span>
+        </el-col>
+        <el-col v-else :offset="2" :span="20" class='about_the_event_block'>
           <h2>開始與永續</h2>
           20年前—2001年Scrum Alliance 成立，是為了推動敏捷運動。
           <br/>
           10年前—2011年Scrum 漸漸的被引進台灣，是為了改變工作方法。
           <br/>
-          今年—2021年 Scrum Alliance 成立的20週年，台灣即將迎來史上第一次Regional Scrum Gathering℠ TAIPEI 2021，在台北舉行。
-          <br/><br/>
+          今年—2021年 Scrum Alliance 成立的20週年，台灣即將迎來史上第一次Regional Scrum Gathering℠ TAIPEI 2021，在台北舉行。 <br/><br/>
           Regional Scrum Gathering℠ TAIPEI是由一群敏捷實踐者及受益者的志工們所共同推動，我們的起心動念很單純、也很純粹:
           <br/>
           <span style="font-style:oblique; font-weight: bold;">為的是，改變台灣長久以來僵化的工作思維、工作模式以及工作文化。</span>
@@ -98,7 +131,7 @@
         <el-col :offset="5" :span="18">
           <el-row>
             <el-col :offset="2" :span="8">
-              <el-card :body-style="{ padding: '10px' }">
+              <el-card class="card" :body-style="{ padding: '10px' }">
                 <img class="image"
                      src="@/assets/imgs/callforpaper_210510.jpg">
                 <div style="padding: 14px;">
@@ -122,15 +155,15 @@
               </el-card>
             </el-col>
             <el-col :offset="2" :span="8">
-              <el-card :body-style="{ padding: '10px' }">
+              <el-card class="card" :body-style="{ padding: '10px' }">
                 <img class="image"
                      src="@/assets/imgs/handshake.jpeg">
                 <div style="padding: 14px;">
-                  <span>2021年全台最大敏捷盛會~等你來加入!!!
-加入RSG Taipei 2021贊助商計畫，
-幫助您的企業獲得曝光，同時招攬更多人才</span>
+                  <span>{{
+                      $t('The biggest agile event in Taiwan in 2021! Join RSG Taipei 2021 sponsorship program to enhance your reputation and increase your agile talent asset.')
+                    }}</span>
                   <div class="bottom clearfix">
-                    <el-button class="card-btn" type="primary">參與贊助</el-button>
+                    <el-button class="card-btn" type="primary">{{ $t('Sponsor') }}</el-button>
                   </div>
                 </div>
               </el-card>
@@ -240,7 +273,7 @@ html, body {
   }
 }
 
-#about_the_event_block {
+.about_the_event_block {
   text-align: center;
   font-size: 18px;
 }
@@ -345,6 +378,14 @@ html, body {
   line-height: 12px;
 }
 
+.card {
+  height: 35vw;
+
+  img {
+    width: 320px;
+    height: 211px;
+  }
+}
 .card-btn {
   float: right;
   position: relative;
