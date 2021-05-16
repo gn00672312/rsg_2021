@@ -366,6 +366,10 @@ html, body {
     color: #fff;
     float: right;
   }
+
+  & > .el-menu-item.dock-right:hover {
+    color: black;
+  }
 }
 
 .time {
@@ -380,11 +384,6 @@ html, body {
 
 .card {
   height: 35vw;
-
-  img {
-    width: 320px;
-    height: 211px;
-  }
 }
 .card-btn {
   float: right;
