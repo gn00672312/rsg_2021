@@ -358,6 +358,10 @@ html, body {
   background: linear-gradient(to right, #42b560, #259cbd);
 }
 
+.el-menu {
+  z-index: 100;
+}
+
 .el-menu--horizontal {
   background: rgb(46, 42, 46);
 
@@ -433,7 +437,7 @@ html, body {
 }
 
 .rsg-theme {
-  background: rgba(64, 64, 64, 0.7);
+  background: rgb(128, 128, 128)
 }
 
 .page-component__scroll {
