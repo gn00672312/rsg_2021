@@ -128,47 +128,45 @@
         </el-col>
       </el-row>
       <el-row class="block-container">
-        <el-col :offset="5" :span="18">
-          <el-row>
-            <el-col :offset="2" :span="8">
-              <el-card class="card" :body-style="{ padding: '10px' }">
-                <img class="image"
-                     src="@/assets/imgs/callforpaper_210510.jpg">
-                <div style="padding: 14px;">
-                  <div>{{ $t('Submission') }}:
-                    <br>
-                    {{
-                      $t('The event will be held from November 4 to 6, including two-day online sessions and one-day offline activity.')
-                    }}
-                    <br>
-                    {{
-                      $t('If you would like to speak at the event, please submit your proposed session information through the link below.')
-                    }}
-                  </div>
-                  <div class="bottom clearfix">
-                    <span class="time">{{ $t('Submission closes on 30 June, 2021.') }}</span>
-                    <div style="padding-top: 15px;">
-                      <el-button class="card-btn" type="primary">{{ $t('Submission') }}</el-button>
-                    </div>
+        <el-col :lg="{span: 18, offset: 3}" :md="{span: 20, offset: 2}">
+          <el-col :sm="{span: 9, offset: 1}" :xs="{span: 22, offset: 1}">
+            <el-card class="card" shadow="hover" style="{padding: 10px}">
+              <img class="banner-image"
+                   src="@/assets/imgs/callforpaper_210510.jpg">
+              <div style="padding: 14px;">
+                <div>{{ $t('Submission') }}:
+                  <br>
+                  {{
+                    $t('The event will be held from November 4 to 6, including two-day online sessions and one-day offline activity.')
+                  }}
+                  <br>
+                  {{
+                    $t('If you would like to speak at the event, please submit your proposed session information through the link below.')
+                  }}
+                </div>
+                <div class="bottom clearfix">
+                  <span class="time">{{ $t('Submission closes on 30 June, 2021.') }}</span>
+                  <div style="padding-top: 15px;">
+                    <el-button class="card-btn" type="primary">{{ $t('Submission') }}</el-button>
                   </div>
                 </div>
-              </el-card>
-            </el-col>
-            <el-col :offset="2" :span="8">
-              <el-card class="card" :body-style="{ padding: '10px' }">
-                <img class="image"
-                     src="@/assets/imgs/handshake.jpeg">
-                <div style="padding: 14px;">
+              </div>
+            </el-card>
+          </el-col>
+          <el-col :sm="{span: 9, offset: 1}" :xs="{span: 22, offset: 1}">
+            <el-card class="card" shadow="hover" style="{padding: 10px}">
+              <img class="banner-image"
+                   src="@/assets/imgs/handshake.jpeg">
+              <div style="padding: 14px;">
                   <span>{{
                       $t('The biggest agile event in Taiwan in 2021! Join RSG Taipei 2021 sponsorship program to enhance your reputation and increase your agile talent asset.')
                     }}</span>
-                  <div class="bottom clearfix">
-                    <el-button class="card-btn" type="primary">{{ $t('Sponsor') }}</el-button>
-                  </div>
+                <div class="bottom clearfix">
+                  <el-button class="card-btn" type="primary">{{ $t('Sponsor') }}</el-button>
                 </div>
-              </el-card>
-            </el-col>
-          </el-row>
+              </div>
+            </el-card>
+          </el-col>
         </el-col>
       </el-row>
       <el-row class="block-container">
@@ -246,6 +244,7 @@ export default {
   },
 }
 </script>
+
 
 <style lang="scss" scoped>
 @import "../assets/scss/var.scss";
@@ -383,14 +382,15 @@ html, body {
 }
 
 .card {
-  height: 35vw;
+  height: 45vw;
 }
+
 .card-btn {
   float: right;
   position: relative;
 }
 
-.image {
+.banner-image {
   width: 100%;
   display: block;
 }
@@ -448,5 +448,29 @@ html, body {
 
 #footer-logo {
   height: 300px;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .card {
+    height: 60vw;
+    margin: 10px;
+  }
+
+  .banner-image {
+    width: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .card {
+    height: auto;
+  }
+
+  .banner-image {
+    width: 100%;
+    display: block;
+  }
 }
 </style>
