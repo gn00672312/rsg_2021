@@ -61,8 +61,8 @@
                   <div>Connecting to the source of <b>Scrum Alliance</b></div>
                   <div>（Connect to the Source!）</div>
                   <br/>
-                  <div>Implementing <b>Scrum!</b> Embracing <b>Scrum</b>, and let <b>Scrum</b> be <b>the Future of
-                    Work。</b></div>
+                  <div>Implementing <b>Scrum</b>, Embracing <b>Scrum</b>, and let <b>Scrum</b> be <b>the future of
+                    work.</b></div>
                   <div>（Practice and Live in Scrum!）</div>
                 </div>
                 <div v-else class="item__content">
@@ -104,10 +104,10 @@
           Scrum Gathering℠ TAIPEI 2021 in Taipei.
           <br/><br/>
           Regional Scrum Gathering℠ TAIPEI is driven by a group of volunteers who are agile practitioners and
-          beneficiaries. Our intention is simple and pure to help <span style="font-style:oblique; font-weight: bold;">change the long-standing rigid thinking, working
-          pattern and work culture in Taiwan.</span>
+          beneficiaries. Our intention is simple and pure to help change the long-standing rigid thinking, working
+          pattern and work culture in Taiwan.
           <br/>
-          <span style="font-style:oblique;font-weight: bold;">This event will provide more opportunities to all agile partners for communicating, learning and improving.</span>
+          <span style="font-style:oblique;font-weight: bold;">We would like to provide more opportunities to all agile partners for communicating, learning and improving.</span>
           <br/>
           <span style="font-style:oblique;font-weight: bold;">To provide individuals, companies and organizations that have not yet joined Agile with a deeper understanding of the benefits of Agile, to solve your dilemmas and change your work patterns.</span>
         </el-col>
@@ -147,7 +147,10 @@
                 <div class="bottom clearfix">
                   <span class="time">{{ $t('Submission closes on 30 June, 2021.') }}</span>
                   <div style="padding-top: 15px;">
-                    <el-button class="card-btn" type="primary">{{ $t('Submission') }}</el-button>
+                    <el-button class="card-btn" type="primary"
+                               @click="open('https://zh.surveymonkey.com/r/rsgTaipei2021speaker')">
+                      {{ $t('Submission') }}
+                    </el-button>
                   </div>
                 </div>
               </div>
@@ -162,7 +165,9 @@
                       $t('The biggest agile event in Taiwan in 2021! Join RSG Taipei 2021 sponsorship program to enhance your reputation and increase your agile talent asset.')
                     }}</span>
                 <div class="bottom clearfix">
-                  <el-button class="card-btn" type="primary">{{ $t('Sponsor') }}</el-button>
+                  <el-button class="card-btn" type="primary" @click="open('https://forms.gle/RUa3izi16dwb5Go37')">
+                    {{ $t('Sponsor') }}
+                  </el-button>
                 </div>
               </div>
             </el-card>
@@ -238,6 +243,10 @@ export default {
     redirect(url) {
       window.location.href = url
     },
+
+    open(url) {
+      window.open(url)
+    }
   },
 
   mounted() {
@@ -260,6 +269,10 @@ html, body {
 #main {
   height: 100%;
   font-size: 14px;
+}
+
+.el-menu-mobile {
+  display: none;
 }
 
 .block-container {
@@ -454,7 +467,6 @@ html, body {
   height: 300px;
 }
 
-
 @media only screen and (max-width: 992px) {
   .card {
     height: 60vw;
@@ -475,6 +487,10 @@ html, body {
   .banner-image {
     width: 100%;
     display: block;
+  }
+
+  .el-menu {
+    display: none;
   }
 }
 </style>
