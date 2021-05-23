@@ -1,19 +1,43 @@
 <template>
   <el-container id="main">
-    <el-header id="header">
-      <el-menu :default-active="activeIndex" class="el-menu rsg-theme" mode="horizontal">
-        <el-menu-item class="dock-right" index="7">
-          <button v-if="lang=='tw'" @click="$i18n.locale='en'">English</button>
-          <button v-else @click="$i18n.locale='tw'">中文</button>
-        </el-menu-item>
-        <el-menu-item class="dock-right" index="6">{{ $t('Tickets') }}</el-menu-item>
-        <el-menu-item class="dock-right" index="5">{{ $t('Sponsors') }}</el-menu-item>
-        <el-menu-item class="dock-right" index="4" @click="redirect('https://www.scrumalliance.org/')">Scrum Alliance
-        </el-menu-item>
-        <el-menu-item class="dock-right" index="3">{{ $t('Speakers') }}</el-menu-item>
-        <el-menu-item class="dock-right" index="2">{{ $t('Schedule') }}</el-menu-item>
-        <el-menu-item class="dock-right" index="1">Scrum Gathering Taipei 2021</el-menu-item>
-      </el-menu>
+    <el-header height="5rem">
+      <b-navbar class="header is-dark is-spaced">
+        <template #brand>
+          <b-navbar-item :to="{ path: '/' }" tag="router-link">
+            <img src="@/assets/imgs/RSG_logo_tpe_sm.png"/>
+          </b-navbar-item>
+        </template>
+        <template #end>
+          <b-navbar-item href="#">
+            Scrum Gathering Taipei 2021
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            {{ $t('Schedule') }}
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            {{ $t('Speakers') }}
+          </b-navbar-item>
+          <b-navbar-item @click="redirect('https://www.scrumalliance.org/')">
+            Scrum Alliance
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            {{ $t('Sponsors') }}
+          </b-navbar-item>
+          <b-navbar-item href="#">
+            {{ $t('Tickets') }}
+          </b-navbar-item>
+          <b-navbar-item tag="div">
+            <div class="buttons">
+              <a v-if="lang=='tw'" class="button is-primary" @click="$i18n.locale='en'">
+                <strong>English</strong>
+              </a>
+              <a v-else class="button is-primary" @click="$i18n.locale='tw'">
+                <strong>中文</strong>
+              </a>
+            </div>
+          </b-navbar-item>
+        </template>
+      </b-navbar>
     </el-header>
     <el-main class="container">
       <el-row style="position: relative;">
@@ -106,10 +130,6 @@
           Regional Scrum Gathering℠ TAIPEI is driven by a group of volunteers who are agile practitioners and
           beneficiaries. Our intention is simple and pure to help change the long-standing rigid thinking, working
           pattern and work culture in Taiwan.
-          <br/>
-          <span style="font-style:oblique;font-weight: bold;">We would like to provide more opportunities to all agile partners for communicating, learning and improving.</span>
-          <br/>
-          <span style="font-style:oblique;font-weight: bold;">To provide individuals, companies and organizations that have not yet joined Agile with a deeper understanding of the benefits of Agile, to solve your dilemmas and change your work patterns.</span>
         </el-col>
         <el-col v-else :offset="2" :span="20" class='about_the_event_block'>
           <h2>開始與永續</h2>
@@ -118,13 +138,7 @@
           10年前—2011年Scrum 漸漸的被引進台灣，是為了改變工作方法。
           <br/>
           今年—2021年 Scrum Alliance 成立的20週年，台灣即將迎來史上第一次Regional Scrum Gathering℠ TAIPEI 2021，在台北舉行。 <br/><br/>
-          Regional Scrum Gathering℠ TAIPEI是由一群敏捷實踐者及受益者的志工們所共同推動，我們的起心動念很單純、也很純粹:
-          <br/>
-          <span style="font-style:oblique; font-weight: bold;">為的是，改變台灣長久以來僵化的工作思維、工作模式以及工作文化。</span>
-          <br/>
-          <span style="font-style:oblique;font-weight: bold;">為的是，提供所有敏捷實踐者及受益者有更多交流、吸取新知、自我的提升的機會。</span>
-          <br/>
-          <span style="font-style:oblique;font-weight: bold;">為的是，讓還沒加入敏捷的個人、企業及各個單位深入了解敏捷的好處，解決你我的困境、改變你我的工作模式。</span>
+          Regional Scrum Gathering℠ TAIPEI是由一群敏捷實踐者及受益者的志工們所共同推動，我們的起心動念很單純、也很純粹的想改變台灣長久以來僵化的工作思維、工作模式以及工作文化。
         </el-col>
       </el-row>
       <el-row class="block-container">
@@ -233,9 +247,9 @@ export default {
 
   watch: {
     lang() {
-      let message = locale_config[lang]
-      i18n.setLocaleMessage(lang, message)
-      this.$i18n.locale = lang
+      let message = locale_config[this.lang]
+      i18n.setLocaleMessage(this.lang, message)
+      this.$i18n.locale = this.lang
     }
   },
 
@@ -266,13 +280,15 @@ html, body {
   padding: 0 !important;
 }
 
+
+.container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 #main {
   height: 100%;
   font-size: 14px;
-}
-
-.el-menu-mobile {
-  display: none;
 }
 
 .block-container {
@@ -371,23 +387,6 @@ html, body {
   background: linear-gradient(to right, #42b560, #259cbd);
 }
 
-.el-menu {
-  z-index: 100;
-}
-
-.el-menu--horizontal {
-  background: rgb(46, 42, 46);
-
-  & > .el-menu-item.dock-right {
-    color: #fff;
-    float: right;
-  }
-
-  & > .el-menu-item.dock-right:hover {
-    color: black;
-  }
-}
-
 .time {
   font-size: 13px;
   color: #999;
@@ -462,10 +461,10 @@ html, body {
   height: 100%;
 }
 
-
-#footer-logo {
-  height: 300px;
+.navbar-brand, .navbar-burger {
+  min-height: 5rem !important;
 }
+
 
 @media only screen and (max-width: 992px) {
   .card {
