@@ -162,6 +162,7 @@
                   <span class="time">{{ $t('Submission closes on 30 June, 2021.') }}</span>
                   <div style="padding-top: 15px;">
                     <el-button class="card-btn" type="primary"
+                               id="submission-btn"
                                @click="open('https://zh.surveymonkey.com/r/rsgTaipei2021speaker')">
                       {{ $t('Submission') }}
                     </el-button>
@@ -179,7 +180,9 @@
                       $t('The biggest agile event in Taiwan in 2021! Join RSG Taipei 2021 sponsorship program to enhance your reputation and increase your agile talent asset.')
                     }}</span>
                 <div class="bottom clearfix">
-                  <el-button class="card-btn" type="primary" @click="open('https://forms.gle/RUa3izi16dwb5Go37')">
+                  <el-button class="card-btn"
+                             id="sponsor-btn"
+                             type="primary" @click="open('https://forms.gle/RUa3izi16dwb5Go37')">
                     {{ $t('Sponsor') }}
                   </el-button>
                 </div>
