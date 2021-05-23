@@ -21,6 +21,7 @@ module.exports = {
       scss: {
         prependData: `            
           @import "~@/assets/scss/rsg_theme.scss";
+          @import "~@/assets/scss/var.scss";
         `
       }
     }

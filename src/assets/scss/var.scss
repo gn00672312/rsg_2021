@@ -1,0 +1,10 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+
+$navbar-height: 5rem;
+$navbar-item-img-max-height: 4rem;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
