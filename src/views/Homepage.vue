@@ -404,7 +404,7 @@ html, body {
 }
 
 .card {
-  height: 45vw;
+  height: 35vw;
 }
 
 .card-btn {
@@ -480,6 +480,9 @@ html, body {
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+  .card {
+    height: 45vw;
   }
 }
 
