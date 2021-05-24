@@ -213,7 +213,8 @@
           </div>
         </el-col>
         <el-col :offset="1" :span="8" style="text-align:center">
-          © 2021 Agile Community Taiwan / Taiwan Agile Tribe
+          <div></div>
+          <div>© 2021 Agile Community Taiwan / Taiwan Agile Tribe</div>
         </el-col>
       </el-row>
     </el-main>
@@ -348,8 +349,6 @@ html, body {
 }
 
 .item__image {
-  width: 100%;
-  height: auto;
   display: inline-block;
   vertical-align: middle;
 }
@@ -467,7 +466,6 @@ html, body {
 .navbar-brand, .navbar-burger {
   min-height: 5rem !important;
 }
-
 
 @media only screen and (max-width: 992px) {
   .card {

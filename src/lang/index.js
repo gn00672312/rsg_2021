@@ -6,7 +6,15 @@ import en from './en.json'
 
 Vue.use(VueI18n)
 
-const locale = 'tw'
+const locale = (function() {
+    let lang = (navigator.language || navigator.browserLanguage).toLowerCase()
+    if (['zh-tw', 'zh-cn', 'zh-sg', 'zh-sg'].indexOf(lang) >= 0) {
+        return 'tw'
+    }
+    else {
+        return 'en'
+    }
+}())
 
 const messages = {
     tw
