@@ -1,7 +1,7 @@
 <template>
   <el-container id="main">
     <el-header height="5rem">
-      <b-navbar class="header is-dark is-spaced">
+      <b-navbar :spaced="true" class="header is-dark">
         <template #brand>
           <b-navbar-item :to="{ path: '/' }" tag="router-link">
             <img src="@/assets/imgs/RSG_logo_tpe_sm.png"/>
@@ -28,11 +28,11 @@
           </b-navbar-item>
           <b-navbar-item tag="div">
             <div class="buttons">
-              <a v-if="lang=='tw'" class="button is-primary" @click="$i18n.locale='en'">
-                <strong>English</strong>
+              <a v-if="lang=='tw'" class="button is-link is-light" @click="$i18n.locale='en'">
+                <strong>EN</strong>
               </a>
-              <a v-else class="button is-primary" @click="$i18n.locale='tw'">
-                <strong>中文</strong>
+              <a v-else class="button is-link is-light" @click="$i18n.locale='tw'">
+                <strong>中</strong>
               </a>
             </div>
           </b-navbar-item>
@@ -161,8 +161,8 @@
                 <div class="bottom clearfix">
                   <span class="time">{{ $t('Submission closes on 30 June, 2021.') }}</span>
                   <div style="padding-top: 15px;">
-                    <el-button class="card-btn" type="primary"
-                               id="submission-btn"
+                    <el-button id="submission-btn" class="card-btn"
+                               type="primary"
                                @click="open('https://zh.surveymonkey.com/r/rsgTaipei2021speaker')">
                       {{ $t('Submission') }}
                     </el-button>
@@ -180,8 +180,8 @@
                       $t('The biggest agile event in Taiwan in 2021! Join RSG Taipei 2021 sponsorship program to enhance your reputation and increase your agile talent asset.')
                     }}</span>
                 <div class="bottom clearfix">
-                  <el-button class="card-btn"
-                             id="sponsor-btn"
+                  <el-button id="sponsor-btn"
+                             class="card-btn"
                              type="primary" @click="open('https://forms.gle/RUa3izi16dwb5Go37')">
                     {{ $t('Sponsor') }}
                   </el-button>
@@ -203,7 +203,7 @@
         </el-col>
       </el-row>
       <el-row id="footer">
-        <el-col :offset="1" :span="8">
+        <el-col :md="{span: 8, offset: 2}" :sm="{span:24}">
           Contact US:
           <font-awesome-icon :icon="['fas', 'envelope']"/>
           rsgtpe@outlook.com
@@ -212,8 +212,12 @@
                                @click="redirect('https://www.facebook.com/rsgtaipei2021')"/>
           </div>
         </el-col>
-        <el-col :offset="1" :span="8" style="text-align:center">
-          <div></div>
+        <el-col :md="{span: 8, offset: 2}" :sm="{span:24}">
+          <div style="line-height: 40px;">LANGUAGE:
+            <b-button class="footer-btn" type="is-ghost" @click="$i18n.locale='en'">English</b-button>
+            |
+            <b-button class="footer-btn" type="is-ghost" @click="$i18n.locale='tw'">中文</b-button>
+          </div>
           <div>© 2021 Agile Community Taiwan / Taiwan Agile Tribe</div>
         </el-col>
       </el-row>
@@ -438,6 +442,10 @@ html, body {
   background: rgba(64, 64, 64, 0.7);
   font-size: 16px;
   padding: 40px 30px;
+
+  .footer-btn {
+    color: white;
+  }
 }
 
 .shortcut-btn {
