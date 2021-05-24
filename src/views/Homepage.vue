@@ -145,7 +145,7 @@
         <el-col :lg="{span: 18, offset: 3}" :md="{span: 20, offset: 2}">
           <el-col :sm="{span: 9, offset: 1}" :xs="{span: 22, offset: 1}">
             <el-card class="card" shadow="hover" style="{padding: 10px}">
-              <img class="banner-image"
+              <img class="card-image"
                    src="@/assets/imgs/callforpaper_210510.jpg">
               <div style="padding: 14px;">
                 <div>{{ $t('Submission') }}:
@@ -173,7 +173,7 @@
           </el-col>
           <el-col :sm="{span: 9, offset: 1}" :xs="{span: 22, offset: 1}">
             <el-card class="card" shadow="hover" style="{padding: 10px}">
-              <img class="banner-image"
+              <img class="card-image"
                    src="@/assets/imgs/handshake.jpeg">
               <div style="padding: 14px;">
                   <span>{{
@@ -412,7 +412,7 @@ html, body {
   position: relative;
 }
 
-.banner-image {
+.card-image {
   width: 100%;
   display: block;
 }
@@ -475,13 +475,21 @@ html, body {
   min-height: 5rem !important;
 }
 
+@media only screen and (max-width: 1300px) {
+  .item__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .card {
     height: 60vw;
     margin: 10px;
   }
 
-  .banner-image {
+  .card-image {
     width: 100%;
     display: block;
   }
@@ -492,7 +500,7 @@ html, body {
     height: auto;
   }
 
-  .banner-image {
+  .card-image {
     width: 100%;
     display: block;
   }
