@@ -4,7 +4,7 @@
       <b-navbar :spaced="true" class="header is-dark">
         <template #brand>
           <b-navbar-item :to="{ path: '/' }" tag="router-link">
-            <img src="@/assets/imgs/RSG_logo_tpe_sm.png"/>
+            <img src="@/assets/imgs/RSG_logo_ol.png"/>
           </b-navbar-item>
         </template>
         <template #end>
@@ -292,6 +292,7 @@ html, body {
 .container {
   width: 100% !important;
   max-width: 100% !important;
+  top: 30px;
 }
 
 #main {
@@ -475,6 +476,16 @@ html, body {
   min-height: 5rem !important;
 }
 
+.navbar-brand {
+  a {
+    padding: 0 !important;
+  }
+
+  img {
+    max-height: 5rem;
+  }
+}
+
 @media only screen and (max-width: 1300px) {
   .item__image {
     height: 100%;
@@ -495,6 +506,30 @@ html, body {
   .card-image {
     width: 100%;
     display: block;
+  }
+
+  .container {
+    top: 0 !important;
+  }
+
+  .el-header, .header {
+    height: 3.5rem !important;
+    min-height: 3.5rem !important;
+    max-height: 3.5rem !important;
+  }
+
+  .navbar-brand {
+    a {
+      padding: 0 10px !important;
+    }
+
+    img {
+      max-height: 3rem;
+    }
+
+    a.navbar-burger.burger {
+      margin: 15px 0 15px auto !important;
+    }
   }
 }
 
