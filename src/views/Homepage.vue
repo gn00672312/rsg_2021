@@ -498,6 +498,10 @@ html, body {
 }
 
 @media only screen and (max-width: 992px) {
+  .container {
+    top: 0 !important;
+  }
+
   .card {
     height: 60vw;
     margin: 10px;
@@ -506,30 +510,6 @@ html, body {
   .card-image {
     width: 100%;
     display: block;
-  }
-
-  .container {
-    top: 0 !important;
-  }
-
-  .el-header, .header {
-    height: 3.5rem !important;
-    min-height: 3.5rem !important;
-    max-height: 3.5rem !important;
-  }
-
-  .navbar-brand {
-    a {
-      padding: 0 10px !important;
-    }
-
-    img {
-      max-height: 3rem;
-    }
-
-    a.navbar-burger.burger {
-      margin: 15px 0 15px auto !important;
-    }
   }
 }
 
