@@ -8,7 +8,7 @@
           </b-navbar-item>
         </template>
         <template #end>
-          <b-navbar-item href="#">
+          <b-navbar-item href="/about-the-event/">
             Scrum Gathering Taipei 2021
           </b-navbar-item>
           <b-navbar-item href="#">
@@ -203,16 +203,20 @@
         </el-col>
       </el-row>
       <el-row id="footer">
-        <el-col :md="{span: 8, offset: 2}" :sm="{span:24}">
-          Contact US:
+        <el-col :md="{span: 8}" :sm="{span:24}">
+          <h3> CONTACT </h3>
           <font-awesome-icon :icon="['fas', 'envelope']"/>
           rsgtpe@outlook.com
-          <div>
-            <font-awesome-icon :icon="['fab', 'facebook']" class="shortcut-btn"
-                               @click="redirect('https://www.facebook.com/rsgtaipei2021')"/>
-          </div>
         </el-col>
-        <el-col :md="{span: 8, offset: 2}" :sm="{span:24}">
+        <el-col :md="{span: 8}" :sm="{span:24}">
+          <h3> CONNECT </h3>
+          <font-awesome-icon :icon="['fab', 'facebook-f']" class="shortcut-btn"
+                             @click="redirect('https://www.facebook.com/rsgtaipei2021')"/>
+
+          <font-awesome-icon :icon="['fab', 'linkedin-in']" class="shortcut-btn"
+                             @click="redirect('https://www.linkedin.com/company/rsg-taipei/')"/>
+        </el-col>
+        <el-col :md="{span: 8}" :sm="{span:24}">
           <div style="line-height: 40px;">LANGUAGE:
             <b-button class="footer-btn" type="is-ghost" @click="$i18n.locale='en'">English</b-button>
             |
@@ -441,11 +445,19 @@ html, body {
 #footer {
   color: #fff;
   background: rgba(64, 64, 64, 0.7);
-  font-size: 16px;
+  font-size: 20px;
   padding: 40px 30px;
+
+  .el-col  {
+    margin: 20px 0;
+  }
 
   .footer-btn {
     color: white;
+  }
+
+  & h3 {
+    font-size: 28px;
   }
 }
 
@@ -453,6 +465,13 @@ html, body {
   cursor: pointer;
   font-size: 28px;
   margin-top: 10px;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  border-radius: 25px;
+  background: #fff;
+  color: #7e7e7e;
+  margin-right: 15px;
 
   &:hover {
     color: #409eff;

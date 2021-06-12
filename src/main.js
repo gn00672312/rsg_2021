@@ -13,9 +13,9 @@ Vue.use(ElementUI)
 import { library  } from '@fortawesome/fontawesome-svg-core'
 
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faFacebook, faEnvelope)
+library.add(faFacebookF, faEnvelope, faLinkedinIn)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 import { i18n } from './lang'
 
